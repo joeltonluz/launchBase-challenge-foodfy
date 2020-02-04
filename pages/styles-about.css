@@ -1,0 +1,91 @@
+:root {
+  --color-font-default: #111111;
+  --color-font-paragraph: #444444;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body{
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  /*margin: 0 auto;
+  width: 940px;*/
+}
+
+/*=====HEADER=====*/
+
+.header__top {
+  margin: 0 auto;
+  width: 940px;
+  height: 35px;
+  padding-bottom: 32px;
+}
+
+.links a {
+  font-size: 16px;
+  color: var(--color-font-default);
+  text-decoration: none;
+  margin: 0 30px 0 0;
+}
+
+.links a:hover {
+  font-weight: 800;
+}
+
+.links img {
+  margin: 0px 100px 0 0;
+  padding-top: 20px;
+}
+
+/*=====SECTION=====*/
+section {
+  width: 940px;
+  margin: 32px auto;
+}
+
+section div {
+  padding: 20px 0;
+}
+
+section h1 {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 800;
+  padding-bottom: 20px;
+  color: var(--color-font-default);
+}
+
+section h2 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 800;
+  padding-bottom: 20px;
+  color: var(--color-font-default);
+}
+
+section p {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: var(--color-font-paragraph);
+}
+
+/*=====RODAPÉ=====*/
+footer {
+  background-color: #EEEEEE;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p{
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #999999;
+}
