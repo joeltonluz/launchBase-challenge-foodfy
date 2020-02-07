@@ -1,0 +1,264 @@
+:root {
+  --color-rosa: #FBDFDB;
+  --color-font-default: #111111;
+  --color-font-author:#777777;
+  --color-font-detail-recipe: #444444;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body{
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*=====HEADER=====*/
+
+.header__top {
+  margin: 0 auto;
+  width: 940px;
+  height: 35px;
+  padding-bottom: 32px;
+}
+
+.links a {
+  font-size: 16px;
+  color: var(--color-font-default);
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.links a:hover {
+  font-weight: 800;
+}
+
+.links img {
+  margin: 0px 100px 0 0;
+  padding-top: 20px;
+}
+
+/*=====BANNER=====*/
+
+.header__banner {
+  margin: 0 auto;
+  width: 940px;
+  height: 366px;
+  background-color: var(--color-rosa);
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.header__banner .text-banner {
+  width: 320px;
+  padding: 120px 50px;
+  color: var(--color-font-default)
+}
+
+.header__banner .text-banner h1 {
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.header__banner .text-banner p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #000000;
+  opacity: 70%;
+  padding-top: 10px;
+}
+
+.header__banner .img-banner {
+  margin-top: 66px;
+  margin-right: 100px;
+}
+
+.title-foods {
+  margin: 0 auto;
+  width: 940px; 
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.title-foods h1{
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-font-default);
+}
+
+/*=====SECTION=====*/
+.foods {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 940px;
+  margin: 0 auto;
+  gap: 20px;
+  /*padding-bottom: 50px;*/
+}
+
+.foods .food img{
+  /*height: 140px;*/
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.foods .food img:hover{
+  cursor: pointer;
+  opacity: 70%;
+  transition: 500ms;
+}
+
+.foods .food__text h1{
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  padding-top: 20px;
+}
+
+.foods .food__chef h4{
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--color-font-author);
+  padding-top: 5px;
+}
+
+/*=====RODAPÉ=====*/
+footer {
+  background-color: #EEEEEE;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+footer p{
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #999999;
+}
+
+/* ===== specifc recipe =====*/
+.specific-recipe {
+  margin: 0 auto;
+  width: 940px;
+}
+
+.recipe__image{
+  padding-bottom: 50px;
+}
+
+.recipe__image img{
+  border-radius: 15px;
+}
+
+.recipe__author {
+  text-align: center;
+}
+
+.recipe__author h1{
+  font-size: 36px;
+  line-height: 42px;
+  color: var(--color-font-default);
+  font-weight: 800;
+  padding-bottom: 4px;
+}
+
+.recipe__author h4 {
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--color-font-author);
+  font-weight: 400;
+}
+
+.content__recipe {
+  padding-top: 50px;
+}
+
+.content__recipe h2{
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--color-font-default);
+  font-weight: 800;
+}
+
+.content__recipe li, p{
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-font-detail-recipe);
+}
+
+.content__recipe .link__hide-show {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 800;
+  color: #999999;
+}
+
+.content__recipe .link__hide-show:hover {
+  color: black;
+  transition: 1000ms;
+}
+
+.hide_detail {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
+
+.title__ingredients {
+  display: grid;
+  grid-template-columns: 142px 50px;
+  align-items: center;
+}
+
+.detail__ingredients {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.title__prepare {
+  display: grid;
+  grid-template-columns: 192px 50px;
+  align-items: center;
+}
+
+.detail__prepare {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.title__information {
+  display: grid;
+  grid-template-columns: 261px 50px;
+  align-items: center;
+}
+
+.detail__information {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.detail__information p {
+  text-align: start;
+}
+
+/* ===== erro 404 =====*/
+.error-404 {
+  margin: 0 auto;
+  width: 940px;
+  padding: 20px;
+}
+
+.error-404 img{
+  border-radius: 20px;
+}
