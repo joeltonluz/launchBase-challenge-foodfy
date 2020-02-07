@@ -1,0 +1,51 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <title>Foodfy - O Restaurante da Rocketseat - Receitas</title>
+{% endblock %}
+
+{% block content %}
+  <section>
+    <div class="specific-recipe">
+      <div class="recipe__image">
+        <img src="{{recipe.image}}" alt="" srcset="">
+      </div>
+      <div class="recipe__author">
+        <h1>{{recipe.title}}</h1>
+        <h4>{{recipe.author}}</h4>
+      </div>
+      <div class="content__recipe">
+
+        <div class="title__ingredients">
+          <h1>Ingredientes</h1>
+          <a class="hide__ingredients link__hide-show">esconder</a>
+        </div>
+        <div class="detail__ingredients">
+          {% for ingredients in recipe.ingredients %}
+            <li>{{ingredients}}</li>
+          {% endfor %}
+        </div>
+
+        <div class="title__prepare">
+          <h2>Modo de preparo</h2>
+          <a class="hide__prepare link__hide-show">esconder</a>
+        </div>
+        <div class="detail__prepare">
+          {% for preparation in recipe.preparation %}
+            <li>{{preparation}}</li>
+          {% endfor %}
+        </div>
+
+        <div class="title__information">
+          <h2>Informações adicionais</h2>
+          <a class="hide__information link__hide-show">esconder</a>
+        </div>
+        <div class="detail__information">
+          <p>{{recipe.information}}</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+{% endblock %}

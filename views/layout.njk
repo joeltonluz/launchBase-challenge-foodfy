@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  {% block head %}
+    <title>Foodfy - O Restaurante da Rocketseat</title>
+  {% endblock %}
+</head>
+<body>
+  <header class="header__top">  
+    <div class="links">
+      <a href="/" class="logo-image"><img src="/assets/logo.png" alt=""></a>
+      <a href="/about" class="page-about">Sobre</a>
+      <a href="/recipes" class="page-recipe">Receitas</a>
+    </div>
+  </header>
+
+  {% block content %}
+  {% endblock %}
+
+    <footer>
+    <div class="text">
+      <p>Todos direitos reservados, receitas Foodfy</p>
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script>
+
+</body>
+</html>
