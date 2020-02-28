@@ -1,8 +1,10 @@
 :root {
-  --color-rosa: #FBDFDB;
+  --color-rosa: #fbdfdb;
   --color-font-default: #111111;
   --color-font-author:#777777;
   --color-font-detail-recipe: #444444;
+  --color-button-purple:#6558C3;
+  --color-button-red: #DC4747;
 }
 
 * {
@@ -152,10 +154,9 @@ footer p{
 }
 
 .recipe__image{
-  padding-bottom: 50px;
-}
-
-.recipe__image img{
+  
+  height: 280px;
+  margin-bottom: 50px;
   border-radius: 15px;
 }
 
@@ -261,4 +262,224 @@ footer p{
 
 .error-404 img{
   border-radius: 20px;
+}
+
+/* ===== ADMIN =====*/
+
+/* index */
+.links__admin {
+  margin: 30px auto;
+  width: 940px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.links__admin a {
+  text-decoration: none;
+}
+
+.header__top_admin {
+  height: 80px;
+  background-color: #111111;  
+}
+
+.links-admin{
+  margin: 0 auto;
+  width: 940px;
+  
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.links-admin .logo-image img {
+  filter: brightness(100);
+}
+/* list recipes */
+.list__recipes__admin {
+  margin: 10px auto;
+  width: 940px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  gap: 20px;
+}
+
+.recipe__img__admin {
+  width: 172px;
+  height: 80px;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.recipe__img__admin img{
+  border-radius: 8px;
+  width: 100%;
+}
+
+.recipe__details__admin h1 {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #111;
+}
+
+.recipe__details__admin h4 {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #777;
+  margin-top: 5px;
+}
+
+.recipe__details__admin a {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  color: var(--color-button-purple);
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+/* recipe */
+
+.title-foods_admin {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-foods button {
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFF;
+  font-weight: bold;
+  padding: 9px 20px;
+
+  background-color: var(--color-button-purple);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.title-foods button:hover {
+  color: #FFF75E;
+  transition: 500ms;
+}
+
+/* ====create/edit ====*/
+.main-content {
+  margin: 50px auto 0;
+  width: 940px;
+}
+
+.main-content .admin__recipe__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 28px;
+  color: #111;
+}
+
+.main-content .form-buttons {
+  display: flex;
+}
+
+.main-content .admin__recipe__title button {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+
+  color: #FFF;
+  
+  padding: 9px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.main-content .admin__recipe__title .save {
+  background-color: var(--color-button-purple);
+}
+
+.main-content .admin__recipe__title .delete {
+  background-color: var(--color-button-red);
+  margin-right: 8px;
+}
+
+.main-content .admin__recipe__title button:hover {
+  color: #FFF75E;
+  transition: 500ms;
+}
+
+.main-content .item {
+  margin-top: 30px;
+}
+
+.main-content .item > :first-child {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.main-content .item input, textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+
+  border: 1px solid #DDD;
+  background-color: #FFF;
+  color: #111;
+  outline: 0;
+
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: normal;
+}
+
+.main-content .item input > :last-child {
+  margin-bottom: inherit;
+}
+
+.main-content .item button {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+
+  color: var(--color-button-purple);
+  background-color: transparent;
+
+  cursor: pointer; 
+}
+
+.main-content .item textarea {
+  resize: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.item-dynamic {
+  position: relative;
+}
+
+.item-dynamic button {
+  position: absolute;
+  
+  top: -8px;
+  left: -8px;
+}
+
+.item-dynamic i { 
+  color: var(--color-button-red);
+  cursor: pointer;
+}
+
+.item-dynamic i:hover { 
+  color: rgb(133, 34, 34);
+  transition: 500ms;
+
 }
