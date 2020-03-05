@@ -6,7 +6,7 @@
   "author": "Joelton Lino Luz <joelton@live.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
