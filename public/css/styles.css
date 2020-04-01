@@ -10,41 +10,151 @@
 * {
   margin: 0;
   border: 0;
-  padding: 0;
+  padding: 0; 
+  box-sizing: border-box;
 }
 
 body{
   background-color: white;
   font-family: 'Roboto', sans-serif;
+  height: 100vh;
 }
 
-/*=====HEADER=====*/
+.wrapper {
+  min-height: 100%;
+}
 
+/*=====GENÉRICOS=====*/
+ /*--- LAYOUT MENU---*/
 .header__top {
   margin: 0 auto;
   width: 940px;
-  height: 35px;
-  padding-bottom: 32px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.links a {
+.header__top .links {
+  display: flex;
+  align-items: center;
+}
+
+.header__top a:nth-child(1) {
+  margin-right: 120px;
+}
+
+.header__top a {
   font-size: 16px;
   color: var(--color-font-default);
   text-decoration: none;
-  margin-right: 30px;
+  margin-right: 32px;
+  transition: 0.4s;
 }
 
-.links a:hover {
-  font-weight: 800;
+.header__top a:hover {
+  color: var(--color-button-red);
 }
 
-.links img {
-  margin: 0px 100px 0 0;
-  padding-top: 20px;
+.header__top .search form {
+  display: flex;
+  justify-content: center;
 }
 
-/*=====BANNER=====*/
+.header__top input {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  height: 36px;
+  width: 246px;
+  margin-right: 8px;
+  font-size: 14px;
+  padding: 8px;
+  outline: 0;
+}
 
+.header__top button {
+  height: 36px;
+  padding: 8px 16px;
+
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
+  
+  color: white;
+  background-color: var(--color-button-purple);
+  border: 1px solid var(--color-button-purple);
+
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.header__top button:hover {
+  background-color: white;
+  color: var(--color-button-purple);
+}
+
+ /*---Titles Default---*/
+.title-default {
+  margin: 0 auto;
+  width: 940px; 
+  padding-top: 50px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-default h1{
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 28px;
+  color: var(--color-font-default);
+}
+
+.title-default a{
+  padding: 8px 16px;
+  border-radius: 4px;
+
+  font-size: 16px;
+  line-height: 19px;
+  
+  color: #FFF;
+  background: var(--color-button-purple);
+  border: 1px solid var(--color-button-purple);
+
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.title-default a:hover{
+  background-color: white;
+  color: var(--color-button-purple);
+}
+
+ /*---LAYOUT FOOTER---*/
+footer {
+  height: 62px;
+  background-color: #EEEEEE; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer span{
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #999999;
+}
+
+/*--- LAYOUT ADMIN ---*/
+
+
+/***************FIM DOS LAYOUTS GENÉRICOS*****************/
+
+/*=====PÁGINA PRINCIPAL=====*/
+  /*--- BANNER---*/
 .header__banner {
   margin: 0 auto;
   width: 940px;
@@ -56,13 +166,15 @@ body{
 }
 
 .header__banner .text-banner {
-  width: 320px;
+  width: 430px;
   padding: 120px 50px;
-  color: var(--color-font-default)
+  height: 100%;
+  color: var(--color-font-default);
 }
 
 .header__banner .text-banner h1 {
   font-size: 32px;
+  font-weight: 700;
   line-height: 38px;
 }
 
@@ -79,50 +191,49 @@ body{
   margin-right: 100px;
 }
 
-.title-foods {
+/*--- MAIS ACESSADOS / PÁGINA DE RECEITAS ---*/
+.grid__recipes {
   margin: 0 auto;
-  width: 940px; 
-  padding-top: 50px;
-  padding-bottom: 20px;
-}
+  width: 940px;
+  margin-bottom: 48px;
 
-.title-foods h1{
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--color-font-default);
-}
-
-/*=====SECTION=====*/
-.foods {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 940px;
-  margin: 0 auto;
-  gap: 20px;
-  /*padding-bottom: 50px;*/
+  gap: 16px;
 }
 
-.foods .food img{
-  /*height: 140px;*/
-  width: 100%;
-  border-radius: 15px;
+.grid__recipes .recipe {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid__recipes .recipe .image {
+  width: 300px;
+  height: 140px;
+  overflow: hidden; 
+  border-radius: 8px;
+}
+
+.grid__recipes .recipe .image img{
+  height: 140px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.4s;
 }
 
-.foods .food img:hover{
+.grid__recipes .recipe .image img:hover{
   cursor: pointer;
   opacity: 70%;
-  transition: 500ms;
 }
 
-.foods .food__text h1{
+.grid__recipes .recipe .text h1{
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
   padding-top: 20px;
 }
 
-.foods .food__chef h4{
+.grid__recipes .recipe .chef h4{
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
@@ -130,41 +241,64 @@ body{
   padding-top: 5px;
 }
 
-/*=====RODAPÉ=====*/
-footer {
-  background-color: #EEEEEE;
-  height: 62px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-footer p{
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: 400;
-  color: #999999;
-}
-
-/* ===== specifc recipe =====*/
-.specific-recipe {
+ /*=====PÁGINA SOBRE=====*/
+ .about {
   margin: 0 auto;
   width: 940px;
 }
 
-.recipe__image{
-  
+.about .paragraph {
+  margin: 30px 0 20px;
+}
+
+.about .paragraph h1, h2 {
+  margin-bottom: 20px;
+}
+
+.about .paragraph h1 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 28px;
+  color: var(--color-font-default);
+}
+
+.about .paragraph h2 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+  color: var(--color-font-default);
+}
+
+.about .paragraph p {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 28px;
+  color: var(--color-font-detail-recipe);
+}
+/*=====PÁGINA RECEITA ESPECÍFICA=====*/
+.specific__recipe {
+  margin: 0 auto;
+  width: 940px;
+}
+
+.specific__recipe .image{
   height: 280px;
   margin-bottom: 50px;
   border-radius: 15px;
+  overflow: hidden; 
 }
 
-.recipe__author {
-  text-align: center;
+.specific__recipe .image img{ 
+  width: 100%;
 }
 
-.recipe__author h1{
+.specific__recipe .title_chef {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specific__recipe .title_chef h1{
   font-size: 36px;
   line-height: 42px;
   color: var(--color-font-default);
@@ -172,7 +306,7 @@ footer p{
   padding-bottom: 4px;
 }
 
-.recipe__author h4 {
+.specific__recipe .title_chef h4 {
   font-size: 20px;
   line-height: 24px;
   color: var(--color-font-author);
@@ -181,13 +315,6 @@ footer p{
 
 .content__recipe {
   padding-top: 50px;
-}
-
-.content__recipe h2{
-  font-size: 24px;
-  line-height: 28px;
-  color: var(--color-font-default);
-  font-weight: 800;
 }
 
 .content__recipe li, p{
@@ -203,11 +330,11 @@ footer p{
   line-height: 14px;
   font-weight: 800;
   color: #999999;
+  transition: 0.4s;
 }
 
 .content__recipe .link__hide-show:hover {
-  color: black;
-  transition: 1000ms;
+  color: var(--color-button-red);
 }
 
 .hide_detail {
@@ -250,7 +377,106 @@ footer p{
 }
 
 .detail__information p {
-  text-align: start;
+  text-align: justify;
+}
+
+/*=====PÁGINA CHEFS=====*/
+.grid__chefs {
+  margin: 36px auto 0;
+  width: 940px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid__chefs .chef {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.grid__chefs .chef span {
+  width: 64px;
+  height: 64px;
+  background-position: top;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 3px 1px 6px -4px black;
+}
+
+.grid__chefs .chef .infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grid__chefs .chef .infos a{
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+  color: var(--color-button-purple);
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.grid__chefs .chef .infos a:hover {
+  color: var(--color-button-red);
+}
+
+.grid__chefs .chef .name {
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--color-font-default);
+}
+
+.grid__chefs .chef .recipes {
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--color-font-author);
+}
+
+
+/*=====PÁGINA PRINCIPAL ADMIN=====*/
+/*---TOPO---*/
+.header__top_admin {
+  height: 80px;
+  background-color: #111111;
+}
+
+.links-admin{
+  margin: 0 auto;
+  width: 940px;
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header__top_admin .links-admin a:nth-child(1) {
+  margin-right: 64px;
+}
+
+.links-admin .logo-image img {
+  filter: brightness(100);
+}
+
+.links-admin a {
+  font-size: 16px;
+  color: rgb(185, 181, 181);
+  text-decoration: none;
+  margin-right: 16px;
+  transition: 0.4s;
+}
+
+.links-admin a:hover {
+  color: white;
+}
+
+
+
+/*=====SECTION=====*/
+.fullPage {
+  height: 100vh;
 }
 
 /* ===== erro 404 =====*/
@@ -264,57 +490,41 @@ footer p{
   border-radius: 20px;
 }
 
-/* ===== ADMIN =====*/
 
-/* index */
-.links__admin {
-  margin: 30px auto;
-  width: 940px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.links__admin a {
-  text-decoration: none;
-}
 
-.header__top_admin {
-  height: 80px;
-  background-color: #111111;  
-}
-
-.links-admin{
-  margin: 0 auto;
-  width: 940px;
-  
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.links-admin .logo-image img {
-  filter: brightness(100);
-}
 /* list recipes */
 .list__recipes__admin {
   margin: 10px auto;
   width: 940px;
+
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+
+.recipe__admin {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+  align-items: flex-start;
 }
 
 .recipe__img__admin {
   width: 172px;
   height: 80px;
-  display: flex;
-  box-sizing: border-box;
+  overflow: hidden; 
+  border-radius: 8px;
 }
 
 .recipe__img__admin img{
+  height: 80px;
   border-radius: 8px;
-  width: 100%;
+}
+
+.recipe__details__admin {
+  display: flex;
+  flex-direction: column;
 }
 
 .recipe__details__admin h1 {
@@ -336,9 +546,15 @@ footer p{
   font-size: 14px;
   line-height: 16px;
   font-weight: bold;
+
   color: var(--color-button-purple);
-  margin-top: 10px;
+  margin-top: 16px;
   text-decoration: none;
+  transition: 0.4s;
+}
+
+.recipe__details__admin a:hover{
+  filter: brightness(0);
 }
 
 /* recipe */
@@ -371,7 +587,7 @@ footer p{
   width: 940px;
 }
 
-.main-content .admin__recipe__title {
+.main-content .admin__title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -387,30 +603,39 @@ footer p{
   display: flex;
 }
 
-.main-content .admin__recipe__title button {
+.main-content .admin__title button {
   font-size: 16px;
   font-weight: bold;
   line-height: 19px;
 
   color: #FFF;
   
-  padding: 9px 20px;
+  padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.main-content .admin__recipe__title .save {
+.main-content .admin__title .save {
   background-color: var(--color-button-purple);
+  border: 1px solid var(--color-button-purple);
+  transition-duration: 0.4s;
 }
 
-.main-content .admin__recipe__title .delete {
+.main-content .admin__title .delete {
   background-color: var(--color-button-red);
+  border: 1px solid var(--color-button-red);
+  transition-duration: 0.4s;
   margin-right: 8px;
 }
 
-.main-content .admin__recipe__title button:hover {
-  color: #FFF75E;
-  transition: 500ms;
+.main-content .admin__title .save:hover {
+  background-color: white;
+  color: var(--color-button-purple);
+}
+
+.main-content .admin__title .delete:hover {
+  background-color: white;
+  color: var(--color-button-red);
 }
 
 .main-content .item {
@@ -425,7 +650,7 @@ footer p{
   margin-bottom: 10px;
 }
 
-.main-content .item input, textarea {
+.main-content .item input, textarea, option, select {
   box-sizing: border-box;
   width: 100%;
   padding: 15px 20px;
@@ -481,5 +706,42 @@ footer p{
 .item-dynamic i:hover { 
   color: rgb(133, 34, 34);
   transition: 500ms;
+}
 
+/*===== chefs Show ======*/
+.card__chef {
+  margin: 0 auto;
+  width: 940px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__chef span{
+  width: 200px;
+  height: 200px;
+  background-position: top;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 5px 1px 6px -4px black;
+}
+
+.card__chef .name {
+  margin-top: 30px;
+
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 42px;
+
+  color: var(--color-font-default);
+}
+
+.card__chef .qtdRecipes {
+  margin-top: 4px;
+
+  font-size: 20px;
+  font-weight: normal;
+  line-height:  24px;
+
+  color: var(--color-font-author);
 }
