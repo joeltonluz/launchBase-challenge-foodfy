@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  {% block head %}
+    <title>Foodfy - O Restaurante da Rocketseat</title>
+  {% endblock %}
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header__top">  
+      <div class="links">
+        <a href="/" class="logo-image"><img src="/assets/logo.png" alt=""></a>
+        <a href="/about" class="page-about">Sobre</a>
+        <a href="/recipes" class="page-recipe">Receitas</a>
+        <a href="/chefs" class="page-chefs">Chefs</a>
+      </div>
+      <div class="search">
+        <form action="/recipes" method="GET">
+          <input 
+            type="search" 
+            name="filter" 
+            placeholder="Buscar uma receita"
+            value="{{filter}}">
+          <button type="submit">Buscar</button>
+        </form>
+      </div>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+  </div>
+
+  <footer>
+    <span>Todos direitos reservados, receitas Foodfy</span>
+  </footer>  
+  
+
+  <script src="/js/script.js"></script>
+
+</body>
+
+</html>

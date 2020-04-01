@@ -1,0 +1,20 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <title>Foodfy - O Restaurante da Rocketseat - Receitas</title>
+{% endblock %}
+
+{% block content %}
+  <div class="grid__chefs">
+    {% for chef in chefs %}
+      <div class="chef">
+        <span style="background-image: url({{chef.avatar_url}})"></span>
+        <div class="infos">
+          <div class="name">{{chef.name}}</div>
+          <div class="recipes">{{chef.qtd_recipes}} receitas</div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}
