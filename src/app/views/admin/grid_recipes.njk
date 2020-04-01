@@ -1,0 +1,18 @@
+<section class="list__recipes__admin">
+  {% if recipes.length > 0 %}
+    {% for recipe in recipes %}
+      <div class="recipe__admin">
+        <div class="recipe__img__admin">
+          <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+        </div>
+        <div class="recipe__details__admin">
+          <h1>{{recipe.title}}</h1>
+          <h4>por {{recipe.chef}}</h4>
+          <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <h2 style="color: #DC4747">Nenhuma Receita encontrada.</h2>
+  {% endif %}
+</section>

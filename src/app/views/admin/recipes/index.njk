@@ -1,0 +1,11 @@
+{% extends "../layout.njk"%}
+
+{% block content %}
+  <div class="title-default">
+    <h1>Gerenciar Receitas</h1>
+    <a href="/admin/recipes/create">Nova Receita</a>
+  </div>
+
+  {% include 'admin/grid_recipes.njk' %}
+
+{% endblock %}
