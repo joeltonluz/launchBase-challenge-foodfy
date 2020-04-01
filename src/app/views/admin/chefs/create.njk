@@ -1,0 +1,14 @@
+{% extends "../layout.njk"%}
+
+{% block content %}
+
+<form class="main-content" method="POST" action="/admin/chefs">
+  <div class="admin__title">
+    <div>Criando Chef</div>
+    <div><button type="submit" class="save">Salvar Chef</button></div>
+  </div>
+
+  {% include 'admin/chefs/fields.njk' %}  
+</form>
+
+{% endblock %}
