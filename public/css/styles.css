@@ -198,7 +198,7 @@ footer span{
   margin-bottom: 48px;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -210,15 +210,19 @@ footer span{
 .grid__recipes .recipe .image {
   width: 300px;
   height: 140px;
-  overflow: hidden; 
+
   border-radius: 8px;
 }
 
 .grid__recipes .recipe .image img{
-  height: 140px;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.4s;
+
+  width: 100%;
+  height: 140px;
+
+  object-fit: cover;
 }
 
 .grid__recipes .recipe .image img:hover{
@@ -278,10 +282,10 @@ footer span{
 /*=====PÁGINA RECEITA ESPECÍFICA=====*/
 .specific__recipe {
   margin: 0 auto;
-  width: 940px;
+  max-width: 940px;
 }
 
-.specific__recipe .image{
+/*.specific__recipe .image{
   height: 280px;
   margin-bottom: 50px;
   border-radius: 15px;
@@ -290,7 +294,7 @@ footer span{
 
 .specific__recipe .image img{ 
   width: 100%;
-}
+}*/
 
 .specific__recipe .title_chef {
   display: flex;
@@ -513,13 +517,17 @@ footer span{
 .recipe__img__admin {
   width: 172px;
   height: 80px;
-  overflow: hidden; 
+  
   border-radius: 8px;
 }
 
 .recipe__img__admin img{
+  width: 100%;
   height: 80px;
+
   border-radius: 8px;
+
+  object-fit: cover;
 }
 
 .recipe__details__admin {
@@ -745,3 +753,290 @@ footer span{
 
   color: var(--color-font-author);
 }
+
+/* AVATAR UPLOAD */
+
+form .item #avatar-upload {
+  position: relative;
+
+  display: block;
+  overflow: hidden;
+
+  width: 130px;
+  cursor: pointer;
+}
+
+form .item #avatar-upload p {
+  padding: 8px 16px;
+
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: normal;
+  
+  color: white;
+  background-color: var(--color-button-purple);
+  border: 1px solid var(--color-button-purple);
+
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+form .item #avatar-upload p:hover {
+  background-color: white;
+  color: var(--color-button-purple);
+}
+
+form .item #avatar-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+form .item #avatar-preview {
+  width: 150px;
+  height: 150px; 
+  margin: 8px auto;
+  display: flex;
+}
+
+form .item #avatar-preview img {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 2px 2px 10px -8px black;
+}
+
+/* PHOTOS UPLOAD */
+form .item .display {
+  display: grid;
+  grid-template-columns: 150px auto;
+  gap: 8px;
+
+  align-items: center;
+
+  height: 150px;
+}
+
+form .item #photos-upload {
+  position: relative;
+
+  display: block;
+  overflow: hidden;
+
+  width: 150px;
+  height: 150px;
+}
+
+form .item #photos-upload .photos-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 16px;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px -6px #333;
+  background-color: white;
+  color: black;
+
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+form .item #photos-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+form .item #photos-preview {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  
+
+  justify-content: center;
+}
+
+form .item #photos-preview img {
+  width: 150px;
+  height: 150px;
+
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+#photos-preview .photo {
+  position: relative;
+}
+
+#photos-preview .photo i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,0.8);
+
+  color: #FF0000;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+  cursor: pointer;
+
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+#photos-preview .photo:hover i {
+  opacity: 1;
+}
+
+/* PHOTOS GALLERY */
+
+/*.specific__recipe .image{
+  height: 280px;
+  margin-bottom: 50px;
+  border-radius: 15px;
+  overflow: hidden; 
+}
+
+.specific__recipe .image img{ 
+  width: 100%;
+}*/
+
+.product-single .gallery {
+  width: 100%;
+  height: 340px;
+
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 2px 2px 2px -4px rgba(63,63,63,0.9);
+
+  
+  border-radius: 4px;
+}
+
+.product-single .gallery .highlight > img {
+  
+  width: 100%;
+  height: 280px;
+
+  object-fit: none;
+  object-position: 50% 50%;
+
+  border: 1px solid #efefef;
+  border-radius: 16px;
+
+  cursor: zoom-in;
+}
+
+.product-single .gallery-preview {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.product-single .gallery-preview img {
+  height: 50px;
+  width: 50px;
+
+  margin-left: 4px;
+
+  object-fit: cover;
+
+  opacity: 0.6;
+
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.product-single .gallery-preview img:hover,
+.product-single .gallery-preview img.active {
+  opacity: 1;
+}
+
+/* lightbox product gallery */
+.product-single .highlight .lightbox-target {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0, .7);
+
+  overflow: hidden;
+  z-index: 100;
+
+  top: -100%;
+  left: 0;
+  opacity: 0;
+
+  transition: opacity 400ms;
+}
+
+.product-single .highlight .lightbox-target img {
+  margin: auto;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: black;
+  box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+
+  width: 90%;
+  height: 90%;
+
+  object-fit: contain;
+}
+
+.product-single .highlight a.lightbox-close {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+
+  position: absolute;
+  top: -80px;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  color: white;
+
+  transition: 400ms;
+}
+

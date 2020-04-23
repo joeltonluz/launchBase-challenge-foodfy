@@ -9,7 +9,7 @@
   <div class="grid__chefs">
     {% for chef in chefs %}
       <div class="chef">
-        <span style="background-image: url({{chef.avatar_url}})"></span>        
+        <span style="background-image: url({{chef.path}})"></span>        
         <div class="infos">
           <div class="name">{{chef.name}}</div>
           <a href="/admin/chefs/{{chef.id}}">Visualizar</a>

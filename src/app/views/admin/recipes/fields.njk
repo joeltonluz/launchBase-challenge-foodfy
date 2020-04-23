@@ -1,21 +1,49 @@
 <div class="item">
-  <div>Nome da Receita</div>  
-  <div><input type="text" name="title" value="{{recipe.title}}" required/></div>
+  <div>Fotos</div>
+  <div class=display>
+    <div id="photos-upload">
+      <input 
+        id="photos-input"
+        type="file" 
+        name="photos" 
+        multiple
+        accept="image/*"
+        onchange="PhotosUpload.handleFileInput(event)"
+      >
+      <div class="photos-add">
+        <span class="material-icons" style="font-size: 28px; color: #777777">add</span>
+      </div>
+    </div>
+
+    <div id="photos-preview">
+      {% if files %}
+        {% for image in files %}
+          <div class="photo" id="{{image.file_id}}">
+            
+            <img src="{{image.src}}" alt="{{image.name}}">
+            <i class="material-icons"
+              onclick="PhotosUpload.removeOldPhoto(event)"
+            >close</i>
+          </div>
+        {% endfor %}
+        <input type="hidden" name="removed_files">
+      {% endif %}
+    </div>
+  </div>
 </div>
 
 <div class="item">
-  <div>Autor da Receita</div>
+  <div>Nome da Receita</div>  
+  <input type="text" name="title" value="{{recipe.title}}" required/>
+</div>
+
+<div class="item">
+  <div>Chef</div>
   <select name="chef_id">
     {% for chef in chefs %}
       <option value="{{chef.id}}" {% if recipe.chef_id == chef.id %} selected {% endif %}>{{chef.name}}</option>
     {% endfor %}
   </select>
-</div>
-
-
-<div class="item">
-  <div>Imagem da Receita</div>  
-  <div><input type="text" name="image" value="{{recipe.image}}" required/></div>
 </div>
 
 <div class="item">
@@ -33,7 +61,7 @@
       </div>
     {% endfor %}
   </div>
-  <div><button type="button" class="addNewIngredient">Adicionar novo ingrediente</button></div>
+  <div><button type="button" class="addNewIngredient" onclick="addInput('#ingredients','.ingredient')">Adicionar novo ingrediente</button></div>
 </div>
 
 <div class="item">
@@ -51,7 +79,7 @@
       </div>
     {% endfor %}
   </div>
-  <div><button type="button" class="addNewPreparation">Adicionar novo passo</button></div>
+  <div><button type="button" class="addNewPreparation" onclick="addInput('#preparations','.preparation')">Adicionar novo passo</button></div>
 </div>
 
 <div class="item">

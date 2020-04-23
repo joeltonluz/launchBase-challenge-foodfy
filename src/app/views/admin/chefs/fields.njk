@@ -3,7 +3,31 @@
   <div><input type="text" name="name" value="{{chef.name}}" required/></div>
 </div>
 
-<div class="item">
+<!--<div class="item">
   <div>Avatar</div>  
   <div><input type="text" name="avatar_url" value="{{chef.avatar_url}}" required/></div>
+</div>-->
+
+<div class="item">
+  <div>Avatar</div>
+  <div>
+    <div id="avatar-upload">
+      <input 
+        id="avatar-input"
+        type="file" 
+        name="avatar_url" 
+        accept="image/*"
+        onchange="AvatarUpload.handleFileInput(event)"
+        required
+      >
+      <p>Enviar Avatar</p>
+    </div>
+
+    <div id="avatar-preview">
+      <img src="{{chef.path}}" alt="Imagem de {{chef.name}}">
+    </div>    
+  </div>
 </div>
+
+
+
